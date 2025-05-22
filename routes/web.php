@@ -38,7 +38,10 @@ use App\Http\Controllers\Admin\ProductSerieController;
 use App\Http\Controllers\Admin\QuestionController;
 use App\Http\Controllers\Admin\QuestionMainController;
 use App\Http\Controllers\Admin\ReasonController;
+use App\Http\Controllers\Admin\RobotAdvantageController;
+use App\Http\Controllers\Admin\RobotController;
 use App\Http\Controllers\Admin\RobotIoMainController;
+use App\Http\Controllers\Admin\RobotItemController;
 use App\Http\Controllers\Admin\RobotMainController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\RuleController;
@@ -79,6 +82,7 @@ Route::get('/', [PageController::class,'login'])->name('login');
 Route::post('/login_submit',[AuthController::class,'login_submit'])->name('login_submit');
 //Route::post('/register_submit',[AuthController::class,'register_submit'])->name('register_submit');
 
+
 Route::group(['middleware' =>'auth'], function (){
 
     Route::get('/home', [PageController::class,'home'])->name('home');
@@ -88,6 +92,7 @@ Route::group(['middleware' =>'auth'], function (){
     Route::resource('permissions',PermissionController::class);
 
     Route::resource('blogs',BlogController::class);
+    Route::resource('robot_advantages',RobotAdvantageController::class);
     Route::resource('rules',RuleController::class);
     Route::resource('shops',ShopController::class);
     Route::resource('types',TypeController::class);
@@ -104,6 +109,8 @@ Route::group(['middleware' =>'auth'], function (){
     Route::resource('mains',MainController::class);
     Route::resource('specials',SpecialController::class);
     Route::resource('credits',CreditController::class);
+    Route::resource('robots',RobotController::class);
+    Route::resource('robots.robot_items',RobotItemController::class);
     Route::get('toggle_status/{id}',[CreditController::class,'toggleStatus'])->name('toggle_status');
     Route::resource('reasons',ReasonController::class);
     Route::resource('questions',QuestionController::class);

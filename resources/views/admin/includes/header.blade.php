@@ -158,6 +158,18 @@
                         </a>
                     </li>
                     <li>
+                        <a href="{{ route('robots.index') }}">
+                            <i class="ri-price-tag-line"></i>
+                            <span>iRobot OS haqqında məlumat</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('robot_advantages.index') }}">
+                            <i class="ri-price-tag-line"></i>
+                            <span>iRobot OS üstünlükləri</span>
+                        </a>
+                    </li>
+                    <li>
                         <a href="{{ route('specials.index') }}">
                             <i class="ri-price-tag-line"></i>
                             <span>Xüsusi təkliflər</span>

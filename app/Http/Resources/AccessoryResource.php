@@ -15,7 +15,6 @@ class AccessoryResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
-        $base_url = url('/');
 
         return [
             'id' => $this->id,
@@ -25,7 +24,7 @@ class AccessoryResource extends JsonResource
                 'en' => optional($this->translate('en'))->slug,
                 'ru' => optional($this->translate('ru'))->slug,
             ],
-            'image' => $base_url . '/storage/' . $this->image,
+            'image' => url('/') . '/storage/' . $this->image,
             'price' => $this->price,
             'discounted_price' => $this->discounted_price ?? $this->price,
             'img_alt' => $this->img_alt,

@@ -22,6 +22,7 @@ use App\Http\Controllers\Api\PercentageController;
 use App\Http\Controllers\Api\ProductController;
 use App\Http\Controllers\Api\QuestionController;
 use App\Http\Controllers\Api\ReasonController;
+use App\Http\Controllers\Api\RobotController;
 use App\Http\Controllers\Api\RobotHomeAppController;
 use App\Http\Controllers\Api\RuleController;
 use App\Http\Controllers\Api\SectionController;
@@ -102,6 +103,8 @@ Route::group(['middleware' => 'setLocale'], function () {
     Route::get('/irobot_home_app', [RobotHomeAppController::class, 'index']);
     Route::get('/why_irobot', [WhyRobotController::class, 'index']);
     Route::get('/hero', [MainController::class, 'hero']);
+    Route::get('/robots', [RobotController::class, 'index']);
+    Route::get('/robot-advantages', [RobotController::class, 'robotAdvantages']);
 
     Route::get('socials', [SocialController::class,'index']);
     Route::get('contact_items', [ContactItemController::class,'index']);
